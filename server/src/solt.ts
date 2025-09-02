@@ -1,4 +1,4 @@
-import { CreateHTTPContextOptions } from "@trpc/server/adapters/standalone";
+import type { CreateHTTPContextOptions } from "@trpc/server/adapters/standalone";
 
 async function auth(opts: CreateHTTPContextOptions) {
     const { req } = opts;

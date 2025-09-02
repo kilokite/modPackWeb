@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { server } from "./server";
+// import { ref } from "vue";
+// import { server } from "./server";
 import Normal from "./components/frame/Normal.vue";
 import routes from "~pages";
-const test = ref("null");
-const input = ref("");
-async function hello() {
-	const res = await server.hello.query(input.value);
-	test.value = res;
-}
+// const test = ref("null");
+// const input = ref("");
+// async function hello() {
+// 	const res = await server.hello.query(input.value);
+// 	test.value = res;
+// }
 console.log(routes);
 </script>
 

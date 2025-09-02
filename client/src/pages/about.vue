@@ -7,6 +7,7 @@
 		<div>
 			<v-text-field v-model="input" label="Input" />
 			<v-btn @click="hello">Hello</v-btn>
+			<v-btn v-if="ff">ciallo</v-btn>
 		</div>
 	</div>
 </template>
@@ -16,6 +17,7 @@ import { ref } from "vue";
 import { uigo } from "../easyKit";
 import { server } from "../server";
 const input = ref("");
+const ff = ref(false)
 async function hello() {
 	try {
 		const get = await server.hello2.query(input.value);
