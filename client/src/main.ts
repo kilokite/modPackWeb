@@ -1,6 +1,10 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
+
+import { createPinia } from "pinia";
+const pinia = createPinia();
+
 // Vuetify
 
 import { createVuetify } from "vuetify";
@@ -27,9 +31,11 @@ const router = createRouter({
 	routes,
 });
 
+
+
 const app = createApp(App);
 
 // 安装 easyKit 插件
 app.use(easyKitPlugin, router);
-
+app.use(pinia);
 app.use(vuetify).use(router).mount("#app");

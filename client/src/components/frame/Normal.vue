@@ -19,7 +19,7 @@
                 </router-view>
             </div>
         </v-main>
-        <Auth v-if="auth" />
+        <Auth v-if="!mainStore.authenticated" />
     </v-app>
 
 </template>
@@ -27,6 +27,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import Auth from '../compose/Auth.vue';
+import { useMainStore } from '../../store/mainStore';
+const mainStore = useMainStore();
 const auth = ref(true);
 const drawer = ref(false);
 defineProps<{

@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useMainStore } from '../../store/mainStore';
 const username = ref('');
 const password = ref('');
 import { server } from '../../server';
@@ -26,7 +27,7 @@ const login = async () => {
         password: password.value
     });
     if (res.success) {
-        alert('Login successful');
+        useMainStore().authenticated = true;
     } else {
         alert('Login failed');
     }
