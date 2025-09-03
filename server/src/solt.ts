@@ -8,4 +8,5 @@ async function auth(opts: CreateHTTPContextOptions) {
     }
     return true;
 }
+
 export { auth };

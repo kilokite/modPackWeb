@@ -19,13 +19,15 @@
                 </router-view>
             </div>
         </v-main>
-
+        <Auth v-if="auth" />
     </v-app>
 
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import Auth from '../compose/Auth.vue';
+const auth = ref(true);
 const drawer = ref(false);
 defineProps<{
     title: string;

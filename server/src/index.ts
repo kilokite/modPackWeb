@@ -18,6 +18,21 @@ const appRouter = router({
     hello2: needAuth.input(z.string()).query(({ input }) => {
         return `Hello, ${input}!`
     }),
+    login: publicProcedure.input(z.object({
+        username: z.string(),
+        password: z.string()
+    })).mutation(({ input }) => {
+        if(input.username === 'admin' && input.password === '123456') {
+            return {
+                success: true,
+                token: '123456'
+            }
+        } else {
+            return {
+                success: false,
+            }
+        }
+    }),
 })
 export type AppRouter = typeof appRouter;
 const server = createHTTPServer({
