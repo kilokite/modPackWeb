@@ -4,6 +4,9 @@ import Pages from 'vite-plugin-pages'
 import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
+  build:{
+    outDir: "../dist/public"
+  },
   plugins: [vue(), Pages(), vueDevTools({
     launchEditor: "cursor",
 				componentInspector:{

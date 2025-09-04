@@ -8,6 +8,7 @@
     "client"
   ],
   "scripts": {
+    "build": "npm run build --workspace=server && npm run build --workspace=client && node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "npm run dev --workspace=server",

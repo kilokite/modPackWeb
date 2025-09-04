@@ -29,7 +29,7 @@ import { ref, onMounted } from 'vue';
 import Auth from '../compose/Auth.vue';
 import { useMainStore } from '../../store/mainStore';
 const mainStore = useMainStore();
-const auth = ref(true);
+// const auth = ref(true);
 const drawer = ref(false);
 defineProps<{
     title: string;
