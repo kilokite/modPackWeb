@@ -2,7 +2,7 @@ import type { AppRouter } from '@zkit/server';
 import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
 let serverURL = "/trpc"
 if(import.meta.env.MODE == "development"){
-  serverURL = "http://localhost:${4000}/trpc"
+  serverURL = `http://localhost:${4000}/trpc`
 }
 const server = createTRPCProxyClient<AppRouter>({
   links: [
